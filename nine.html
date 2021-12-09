@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <title>9x9 Solver</title>
+    <script type="text/javascript" src="sudoku.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="shadow-lg p-3 mb-5 bg-body rounded head">
+        <h1 class="display-1">Sudoku Solver</h1>
+        <small class="text-muted">This Solves 9*9 sudoku</small>
+    </div>
+    <div class="contain">
+    <div id="gridArea">
+        <p class="shadow-lg p-3 mb-5 bg-body rounded para">
+        <input type="text" id="r0c0" name="r0c0" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r0c1" name="r0c1" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r0c2" name="r0c2" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r0c3" name="r0c3" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r0c4" name="r0c4" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r0c5" name="r0c5" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r0c6" name="r0c6" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r0c7" name="r0c7" autocomplete="off" maxlength="1" class="top ">
+        <input type="text" id="r0c8" name="r0c8" autocomplete="off" maxlength="1" class="top">
+        <br>
+        <input type="text" id="r1c0" name="r1c0" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r1c1" name="r1c1" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r1c2" name="r1c2" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r1c3" name="r1c3" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r1c4" name="r1c4" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r1c5" name="r1c5" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r1c6" name="r1c6" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r1c7" name="r1c7" autocomplete="off" maxlength="1" class="top ">
+        <input type="text" id="r1c8" name="r1c8" autocomplete="off" maxlength="1" class="top">
+        <br>
+        <input type="text" id="r2c0" name="20" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r2c1" name="21" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r2c2" name="22" autocomplete="off" maxlength="1" class="top left bottom">
+        <input type="text" id="r2c3" name="23" autocomplete="off" maxlength="1" class="top right bottom">
+        <input type="text" id="r2c4" name="24" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r2c5" name="25" autocomplete="off" maxlength="1" class="top left bottom">
+        <input type="text" id="r2c6" name="26" autocomplete="off" maxlength="1" class="top right bottom">
+        <input type="text" id="r2c7" name="27" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r2c8" name="28" autocomplete="off" maxlength="1" class="top bottom">
+        <br>
+
+        <input type="text" id="r3c0" name="30" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r3c1" name="31" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r3c2" name="32" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r3c3" name="33" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r3c4" name="34" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r3c5" name="35" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r3c6" name="36" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r3c7" name="37" autocomplete="off" maxlength="1" class="top ">
+        <input type="text" id="r3c8" name="38" autocomplete="off" maxlength="1" class="top">
+        <br>
+        <input type="text" id="r4c0" name="40" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r4c1" name="41" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r4c2" name="42" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r4c3" name="43" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r4c4" name="44" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r4c5" name="45" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r4c6" name="46" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r4c7" name="47" autocomplete="off" maxlength="1" class="top ">
+        <input type="text" id="r4c8" name="48" autocomplete="off" maxlength="1" class="top">
+        <br>
+        <input type="text" id="r5c0" name="50" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r5c1" name="51" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r5c2" name="52" autocomplete="off" maxlength="1" class="top left bottom">
+        <input type="text" id="r5c3" name="53" autocomplete="off" maxlength="1" class="top right bottom">
+        <input type="text" id="r5c4" name="54" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r5c5" name="55" autocomplete="off" maxlength="1" class="top left bottom">
+        <input type="text" id="r5c6" name="56" autocomplete="off" maxlength="1" class="top right bottom">
+        <input type="text" id="r5c7" name="57" autocomplete="off" maxlength="1" class="top bottom">
+        <input type="text" id="r5c8" name="58" autocomplete="off" maxlength="1" class="top bottom">
+        <br>
+        <input type="text" id="r6c0" name="60" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r6c1" name="61" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r6c2" name="62" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r6c3" name="63" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r6c4" name="64" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r6c5" name="65" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r6c6" name="66" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r6c7" name="67" autocomplete="off" maxlength="1" class="top ">
+        <input type="text" id="r6c8" name="68" autocomplete="off" maxlength="1" class="top">
+        <br>
+        <input type="text" id="r7c0" name="70" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r7c1" name="71" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r7c2" name="72" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r7c3" name="73" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r7c4" name="74" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r7c5" name="75" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r7c6" name="76" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r7c7" name="77" autocomplete="off" maxlength="1" class="top ">
+        <input type="text" id="r7c8" name="78" autocomplete="off" maxlength="1" class="top">
+        <br>
+        <input type="text" id="r8c0" name="80" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r8c1" name="81" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r8c2" name="82" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r8c3" name="83" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r8c4" name="84" autocomplete="off" maxlength="1" class="top">
+        <input type="text" id="r8c5" name="85" autocomplete="off" maxlength="1" class="top left">
+        <input type="text" id="r8c6" name="86" autocomplete="off" maxlength="1" class="top right">
+        <input type="text" id="r8c7" name="87" autocomplete="off" maxlength="1" class="top ">
+        <input type="text" id="r8c8" name="88" autocomplete="off" maxlength="1" class="top">
+        </p>
+        
+    </div>
+    <div class="buttons">
+        <button onclick="solver(9);" type="submit" id="submit" name="Get Sudoku!" class="button">Get Sudoku!</button>
+        <button onclick="reset(9);" type="reset" id="reset" name="Reset" class="button">Reset</button>
+        <p id="wrong" style="visibility:hidden">!!!Wrong input</p>
+    </div>
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+</html>

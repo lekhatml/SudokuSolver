@@ -1,0 +1,148 @@
+html,body{
+    background-color:#ffe227 ;
+}
+#gridArea{
+    display: inline-block;
+    white-space: nowrap;
+} 
+#wrong{
+    color: red;
+    font-size:2rem;
+    font-weight:bold;
+    font-family: 'Caveat', cursive;
+}
+.sss{
+    margin-top:1.5rem;
+}
+.infodiv{
+    margin: 10%;
+    background-color: aliceblue;
+}
+.info{
+    text-align: justify;
+    margin: 5%;
+    font-size:1.2rem;
+    line-height: 2;
+    color:#66BFBF;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+}
+.nav-item{
+    margin:2rem;
+    font-size: 1.2rem;
+    font-weight:45%;
+}
+.display-1{
+    text-align: center;
+    font-size: 4rem;
+}
+.text-muted{
+    text-align: center;
+}
+.active{
+    background-color:#161d6f;
+}
+.para{
+    margin: 1rem;
+} 
+.list-group{
+    margin-left: 2rem;
+    background-color:#ffe227;
+}
+.head{
+    margin-bottom:2rem;
+    margin-top:2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-left: 30px solid #161d6f;
+    border-right: 30px solid #161d6f;
+    text-align: center;
+}
+.contain{
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    background-color:#0a043c;
+}
+.contains{
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    background-color:#0a043c;
+}
+.buttons{
+    text-align: center;
+}
+.button{
+    border: 3px solid #0a043c;
+    background-color: #0a043c;
+    color:#ffe227;
+    padding:1rem;
+    font-size: 2rem;
+    font-weight:2%;
+    font-family: 'Montserrat', sans-serif;
+    width:auto;
+}
+button:hover{
+    background-color: aliceblue;
+    color: #0a043c;
+}
+input[type=text] {
+    border: 3px solid #51c2d5;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+input[type=text]:focus{
+    outline-width: 0;
+    background-color: aqua;
+}
+
+.top{
+    border-top: 12px solid #f3740c;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+.left{
+    border-left: 12px solid #f3740c;
+    margin-right: 4px;
+}
+.right{
+    border-right: 12px solid #f3740c;
+    margin-left: 4px;
+}
+.bottom{
+    border-bottom: 12px solid #f3740c;
+    margin-bottom: 8px;
+}
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: #161d6f;
+    color:white;
+    text-decoration: underline;
+  }
+  

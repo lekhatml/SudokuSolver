@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <title>16x16 Solver</title>
+    <script type="text/javascript" src="sudoku.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="shadow-lg p-3 mb-5 bg-body rounded head">
+        <h1 class="display-1">Sudoku Solver</h1>
+        <small class="text-muted">This solves 16*16 Sudoku</small>
+    </div>
+    <div class="contains">
+    <div id="gridArea">
+        <p class="shadow-lg p-3 mb-5 bg-body rounded para">
+        <input type="text" id="r0c0" name="00"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r0c1" name="01"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r0c2" name="02"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r0c3" name="03"   autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r0c4" name="04"   autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r0c5" name="05"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r0c6" name="06"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r0c7" name="07"   autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r0c8" name="08"   autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r0c9" name="09"   autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r0c10" name="010" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r0c11" name="011" autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r0c12" name="012" autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r0c13" name="013" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r0c14" name="014" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r0c15" name="015" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r1c0"  name="00"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r1c1"  name="01"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r1c2"  name="02"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r1c3"  name="03"   autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r1c4"  name="04"   autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r1c5"  name="05"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r1c6"  name="06"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r1c7"  name="07"   autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r1c8"  name="08"   autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r1c9"  name="09"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r1c10" name="010" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r1c11" name="011" autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r1c12" name="012" autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r1c13" name="013" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r1c14" name="014"  autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r1c15" name="015"  autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r2c0"  name="00"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r2c1"  name="01"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r2c2"  name="02"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r2c3"  name="03"   autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r2c4"  name="04"   autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r2c5"  name="05"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r2c6"  name="06"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r2c7"  name="07"   autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r2c8"  name="08"   autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r2c9"  name="09"   autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r2c10" name="010" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r2c11" name="011" autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r2c12" name="012" autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r2c13" name="013" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r2c14" name="014"  autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r2c15" name="015"  autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r3c0"  name="00"   autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c1"  name="01"   autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c2"  name="02"   autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c3"  name="03"   autocomplete="off" maxlength="2" class="top left bottom">
+        <input type="text" id="r3c4"  name="04"   autocomplete="off" maxlength="2" class="top right bottom">
+        <input type="text" id="r3c5"  name="05"   autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c6"  name="06"   autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c7"  name="07"   autocomplete="off" maxlength="2" class="top left bottom">
+        <input type="text" id="r3c8"  name="08"   autocomplete="off" maxlength="2" class="top right bottom">
+        <input type="text" id="r3c9"  name="09"   autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c10" name="010" autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c11" name="011" autocomplete="off" maxlength="2" class="top left bottom">
+        <input type="text" id="r3c12" name="012" autocomplete="off" maxlength="2" class="top right bottom">
+        <input type="text" id="r3c13" name="013" autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c14" name="014" autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r3c15" name="015" autocomplete="off" maxlength="2" class="top bottom">
+        <br>
+ 
+        <input type="text" id="r4c0"  name="00"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r4c1"  name="01"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r4c2"  name="02"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r4c3"  name="03"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r4c4"  name="04"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r4c5"  name="05"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r4c6"  name="06"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r4c7"  name="07"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r4c8"  name="08"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r4c9"  name="09"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r4c10" name="010"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r4c11" name="011"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r4c12" name="012"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r4c13" name="013"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r4c14" name="014" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r4c15" name="015" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r5c0"  name="00"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r5c1"  name="01"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r5c2"  name="02"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r5c3"  name="03"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r5c4"  name="04"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r5c5"  name="05"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r5c6"  name="06"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r5c7"  name="07"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r5c8"  name="08"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r5c9"  name="09"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r5c10" name="010"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r5c11" name="011"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r5c12" name="012"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r5c13" name="013"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r5c14" name="014" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r5c15" name="015" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r6c0"  name="00"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r6c1"  name="01"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r6c2"  name="02"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r6c3"  name="03"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r6c4"  name="04"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r6c5"  name="05"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r6c6"  name="06"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r6c7"  name="07"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r6c8"  name="08"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r6c9"  name="09"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r6c10" name="010"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r6c11" name="011"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r6c12" name="012"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r6c13" name="013"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r6c14" name="014" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r6c15" name="015" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r7c0"  name="00"  autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c1"  name="01"  autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c2"  name="02"  autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c3"  name="03"  autocomplete="off" maxlength="2" class="top left bottom">
+        <input type="text" id="r7c4"  name="04"  autocomplete="off" maxlength="2" class="top right bottom">
+        <input type="text" id="r7c5"  name="05"  autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c6"  name="06"  autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c7"  name="07"  autocomplete="off" maxlength="2" class="top left bottom">
+        <input type="text" id="r7c8"  name="08"  autocomplete="off" maxlength="2" class="top right bottom">
+        <input type="text" id="r7c9"  name="09"  autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c10" name="010"autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c11" name="011"autocomplete="off" maxlength="2" class="top left bottom">
+        <input type="text" id="r7c12" name="012"autocomplete="off" maxlength="2" class="top right bottom">
+        <input type="text" id="r7c13" name="013"autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c14" name="014"autocomplete="off" maxlength="2" class="top bottom">
+        <input type="text" id="r7c15" name="015"autocomplete="off" maxlength="2" class="top bottom">
+        <br>
+        <input type="text" id="r8c0"  name="00"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r8c1"  name="01"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r8c2"  name="02"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r8c3"  name="03"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r8c4"  name="04"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r8c5"  name="05"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r8c6"  name="06"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r8c7"  name="07"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r8c8"  name="08"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r8c9"  name="09"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r8c10" name="010"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r8c11" name="011"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r8c12" name="012"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r8c13" name="013"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r8c14" name="014" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r8c15" name="015" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r9c0"  name="00"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r9c1"  name="01"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r9c2"  name="02"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r9c3"  name="03"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r9c4"  name="04"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r9c5"  name="05"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r9c6"  name="06"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r9c7"  name="07"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r9c8"  name="08"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r9c9"  name="09"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r9c10" name="010"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r9c11" name="011"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r9c12" name="012"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r9c13" name="013"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r9c14" name="014" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r9c15" name="015" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r10c0"  name="00"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r10c1"  name="01"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r10c2"  name="02"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r10c3"  name="03"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r10c4"  name="04"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r10c5"  name="05"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r10c6"  name="06"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r10c7"  name="07"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r10c8"  name="08"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r10c9"  name="09"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r10c10" name="010"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r10c11" name="011"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r10c12" name="012"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r10c13" name="013"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r10c14" name="014" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r10c15" name="015" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r11c0"  name="110"  autocomplete="off" maxlength="2" class="bottom top">
+        <input type="text" id="r11c1"  name="111"  autocomplete="off" maxlength="2" class="bottom top">
+        <input type="text" id="r11c2"  name="112"  autocomplete="off" maxlength="2" class="bottom top">
+        <input type="text" id="r11c3"  name="113"  autocomplete="off" maxlength="2" class="bottom top left">
+        <input type="text" id="r11c4"  name="114"  autocomplete="off" maxlength="2" class="bottom top right">
+        <input type="text" id="r11c5"  name="115"  autocomplete="off" maxlength="2" class="bottom top">
+        <input type="text" id="r11c6"  name="116"  autocomplete="off" maxlength="2" class="bottom top">
+        <input type="text" id="r11c7"  name="117"  autocomplete="off" maxlength="2" class="bottom top left">
+        <input type="text" id="r11c8"  name="118"  autocomplete="off" maxlength="2" class="bottom top right">
+        <input type="text" id="r11c9"  name="119"  autocomplete="off" maxlength="2" class="bottom top">
+        <input type="text" id="r11c10" name="1110"autocomplete="off" maxlength="2"  class="bottom top ">
+        <input type="text" id="r11c11" name="1111"autocomplete="off" maxlength="2"  class="bottom top left">
+        <input type="text" id="r11c12" name="1112"autocomplete="off" maxlength="2"  class="bottom top right">
+        <input type="text" id="r11c13" name="1113"autocomplete="off" maxlength="2"  class="bottom top ">
+        <input type="text" id="r11c14" name="1114" autocomplete="off" maxlength="2" class="bottom top ">
+        <input type="text" id="r11c15" name="1115" autocomplete="off" maxlength="2" class="bottom top">
+        <br>
+        <input type="text" id="r12c0"  name="120"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r12c1"  name="121"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r12c2"  name="122"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r12c3"  name="123"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r12c4"  name="124"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r12c5"  name="125"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r12c6"  name="126"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r12c7"  name="127"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r12c8"  name="128"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r12c9"  name="129"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r12c10" name="1210"autocomplete="off" maxlength="2"  class="top ">
+        <input type="text" id="r12c11" name="1211"autocomplete="off" maxlength="2"  class="top left">
+        <input type="text" id="r12c12" name="1212"autocomplete="off" maxlength="2"  class="top right">
+        <input type="text" id="r12c13" name="1213"autocomplete="off" maxlength="2"  class="top ">
+        <input type="text" id="r12c14" name="1214" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r12c15" name="1215" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r13c0"  name="130"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r13c1"  name="131"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r13c2"  name="132"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r13c3"  name="133"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r13c4"  name="134"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r13c5"  name="135"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r13c6"  name="136"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r13c7"  name="137"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r13c8"  name="138"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r13c9"  name="139"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r13c10" name="1310"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r13c11" name="1311"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r13c12" name="1312"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r13c13" name="1313"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r13c14" name="1314" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r13c15" name="1315" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r14c0"  name="140"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r14c1"  name="141"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r14c2"  name="142"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r14c3"  name="143"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r14c4"  name="144"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r14c5"  name="145"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r14c6"  name="146"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r14c7"  name="147"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r14c8"  name="148"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r14c9"  name="149"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r14c10" name="1410"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r14c11" name="1411"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r14c12" name="1412"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r14c13" name="1413"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r14c14" name="1414" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r14c15" name="1415" autocomplete="off" maxlength="2" class="top">
+        <br>
+        <input type="text" id="r15c0"  name="150"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r15c1"  name="151"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r15c2"  name="152"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r15c3"  name="153"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r15c4"  name="154"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r15c5"  name="155"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r15c6"  name="156"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r15c7"  name="157"  autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r15c8"  name="158"  autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r15c9"  name="159"  autocomplete="off" maxlength="2" class="top">
+        <input type="text" id="r15c10" name="1510"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r15c11" name="1511"autocomplete="off" maxlength="2" class="top left">
+        <input type="text" id="r15c12" name="1512"autocomplete="off" maxlength="2" class="top right">
+        <input type="text" id="r15c13" name="1513"autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r15c14" name="1514" autocomplete="off" maxlength="2" class="top ">
+        <input type="text" id="r15c15" name="1515" autocomplete="off" maxlength="2" class="top">
+        </p>
+        
+    </div>
+    <div class="buttons">
+        <button onclick="solver(16);" type="submit" id="submit" name="Get Sudoku!" class="button">Get Sudoku!</button>
+        <button onclick="reset(16);" type="reset" id="reset" name="Reset" class="button">Reset</button>
+        <p id="wrong" style="visibility:hidden">!!!Wrong input</p>
+    </div>
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+</html>
